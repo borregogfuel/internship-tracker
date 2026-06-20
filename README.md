@@ -1,37 +1,37 @@
 # Internship Tracker
 
-Plataforma para rastrear internships disponibles, con enfoque en programas early como Duolingo Thrive, Microsoft Explore, Google STEP, Meta University y Uber STAR.
+A platform for tracking available internships, with a focus on early programs like Duolingo Thrive, Microsoft Explore, Google STEP, Meta University, and Uber STAR.
 
-## Por qué
+## Why
 
-Estos programas suelen abrir aplicaciones antes que el resto de los internships de verano, y muchas veces no aparecen en los repositorios públicos de GitHub hasta que alguien hace un pull request. La idea es enterarme apenas abran, antes que la mayoría.
+These programs often open applications earlier than most summer internships, and they frequently don't show up in public GitHub repos until someone submits a pull request. The goal is to find out the moment they open, before most other applicants.
 
-Es un proyecto personal — uso inicial para mí, estudiante de 2do semestre buscando opciones para Summer 2027. Si funciona bien, lo voy a abrir a la comunidad del Tec de Monterrey.
+This is a personal project — initial use is for myself, a 2nd-semester student looking for Summer 2027 opportunities. If it works well, I plan to open it up to the Tec de Monterrey community.
 
-También es mi proyecto de práctica como próximo AWS Builder Group Campus Captain de mi campus, así que está construido 100% en AWS.
+It's also my practice project as the incoming AWS Builder Group Campus Captain for my campus, so it's built entirely on AWS.
 
-## Cómo funciona
+## How it works
 
-Dos fuentes de datos:
+Two data sources:
 
-1. **Repositorio de GitHub** (SimplifyJobs/Summer2026-Internships) — una Lambda revisa el README cada hora y detecta internships nuevos o cambios de status.
-2. **Portales directos de empresas** — una segunda Lambda vigila páginas de careers de empresas específicas que no aparecen en el repo público.
+1. **GitHub repository** (SimplifyJobs/Summer2026-Internships) — a Lambda checks the README every hour and detects new internships or status changes.
+2. **Direct company portals** — a second Lambda watches careers pages for specific companies not covered by the public repo.
 
-Cuando se detecta algo nuevo, se manda una alerta por email.
+When something new is detected, an email alert is sent.
 
 ## Stack
 
 - Frontend: React + Vite + TypeScript + Tailwind
 - Backend: AWS Lambda + API Gateway
-- Base de datos: DynamoDB
+- Database: DynamoDB
 - Scheduling: EventBridge
-- Notificaciones: SNS + SES
+- Notifications: SNS + SES
 - Hosting: S3 + CloudFront
-- Infraestructura: AWS CDK (TypeScript)
+- Infrastructure: AWS CDK (TypeScript)
 - CI/CD: GitHub Actions
 
-Cada servicio de AWS se construye primero a mano en la consola para entender cómo funciona, y luego se recrea con CDK para que quede versionado.
+Each AWS service is built manually in the console first to understand how it works, then recreated with CDK so it's versioned and reproducible.
 
-## Estado
+## Status
 
-En construcción. Por ahora es uso personal, sin frontend todavía.
+Work in progress. Currently personal use only, no frontend yet.
